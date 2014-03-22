@@ -23,6 +23,11 @@ function! giti#system(command)"{{{
 endfunction"}}}
 
 function! giti#system_with_specifics(param)"{{{
+  if g:giti_run_in_buffer_repository == 1
+    let save_dir = getcwd()
+    execute 'lcd ' . expand('%:p:h')
+  endif
+
   if !giti#is_git_repository()
     call giti#print('Not a git repository')
     call giti#print('Specify directory of git repository (and change current directory of this window)')
@@ -41,6 +46,10 @@ function! giti#system_with_specifics(param)"{{{
   endif
 
   let ret = system('git ' . a:param.command)
+
+  if g:giti_run_in_buffer_repository == 1
+    execute 'lcd ' . save_dir
+  endif
 
   if exists('a:param.ignore_error') && a:param.ignore_error
     return ret

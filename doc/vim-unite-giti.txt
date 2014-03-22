@@ -8,6 +8,7 @@ CONTENTS					*vim-unite-giti-contents*
 
 Introduction		|vim-unite-giti-introduction|
 Install			|vim-unite-giti-install|
+Variables		|vim-unite-giti-variables|
 Sources			|vim-unite-giti-sources|
 Kinds			|vim-unite-giti-kinds|
 Commands		|vim-unite-giti-commands|
@@ -30,6 +31,16 @@ And execute :NeoBundleInstall command.
 Example: >
   NeoBundle 'git://github.com/kmnk/vim-unite-giti.git'
 <
+
+==========================================================================
+VARIABLES					*vim-unite-giti-variables*
+
+					*g:giti_run_in_buffer_repository*
+g:giti_run_in_buffer_repository
+		If this is set to 1, giti is run under the repository
+		to which current buffer blongs.
+
+		The default value is 0.
 
 ==========================================================================
 SOURCES						*vim-unite-giti-sources*

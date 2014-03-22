@@ -7,6 +7,9 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 " variables {{{
+if !exists('g:giti_run_in_buffer_repository')
+  let g:giti_run_in_buffer_repository = 0
+endif
 " }}}
 
 " commands {{{
