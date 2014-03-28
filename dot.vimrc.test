@@ -1,6 +1,7 @@
 syntax on
+let s:here = expand('<sfile>:p:h')
 
-set runtimepath+=~/.bundle/vim-unittest/  " edit this on test
+execute "set runtimepath+=" . s:here . "/vim-unittest"
 
 set runtimepath+=./test/mock/
 set runtimepath+=./
